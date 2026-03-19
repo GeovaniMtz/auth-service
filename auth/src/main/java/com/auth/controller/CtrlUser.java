@@ -1,5 +1,6 @@
 package com.auth.controller;
 
+import com.auth.dto.out.UserResponse;
 import com.auth.entity.User;
 import com.auth.service.SvcUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,12 @@ public class CtrlUser {
     private SvcUser svcUser;
 
     @PostMapping
-    public User create(@RequestBody User user) {
+    public UserResponse create(@RequestBody User user) {
         return svcUser.createUser(user);
     }
 
     @GetMapping
-    public List<User> getUsers() {
+    public List<UserResponse> getUsers() {
         return svcUser.getUsers();
     }
 
