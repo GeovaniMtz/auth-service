@@ -1,11 +1,11 @@
 package com.auth.controller;
 
+import com.auth.dto.in.UserRequest;
 import com.auth.dto.out.UserResponse;
-import com.auth.entity.User;
 import com.auth.service.SvcUser;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -16,8 +16,8 @@ public class CtrlUser {
     private SvcUser svcUser;
 
     @PostMapping
-    public UserResponse create(@RequestBody User user) {
-        return svcUser.createUser(user);
+    public String create(@Valid @RequestBody UserRequest request) {
+        return svcUser.createUser(request);
     }
 
     @GetMapping
