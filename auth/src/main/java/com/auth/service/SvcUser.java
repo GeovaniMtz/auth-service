@@ -1,13 +1,15 @@
 package com.auth.service;
 
+import com.auth.dto.in.UserRequest;
+import com.auth.dto.out.UserResponse;
 import com.auth.entity.User;
 
 import java.util.List;
 
 public interface SvcUser {
 
-    User createUser(User user);
+    String createUser(UserRequest userRequest);
 
-    List<User> getUsers();
+    List<UserResponse> getUsers();
 
 }
