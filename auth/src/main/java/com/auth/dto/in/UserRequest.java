@@ -17,7 +17,7 @@ public class UserRequest {
 
     @NotBlank(message = "La contraseña es obligatoria")
     @Pattern(
-            regexp = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$#!%*?&]).{8,}$",
+            regexp = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@_$#!%*?&]).{8,}$",
             message = "La contraseña debe tener mínimo 8 caracteres, una mayúscula, un número y un carácter especial (@$!%*?&)"
     )
     private String password;
